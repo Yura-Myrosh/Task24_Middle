@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="w-80">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Library", "Index", "Home", new { @class = "navbar-brand" })
+            </div>
+        </div>
+    </div>
+    <div class="container body-content flex-column">
+        <table class="table table-responsive">
+            <tr>
+                <td class="col-md-2">
+                    <div class="navbar">
+                        <ul class="nav list-group">
+                            <li class="caption btn btn-warning">@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li class="caption btn btn-warning">@Html.ActionLink("Guest", "Index", "Guest")</li>
+                            <li class="caption btn btn-warning">@Html.ActionLink("Questionnaire", "Questionnaire", "Questionnaire")</li>
+                        </ul>
+                    </div>
+                </td>
+                <td class="col-md-10">
+                    <div>
+                        @RenderBody()
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <hr />
+    </div>
+    <footer class="navbar panel-footer">
+        <p>&copy; Yuriy Myrosh yurii.myrosh.knm.2018@lpnu.ua</p>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

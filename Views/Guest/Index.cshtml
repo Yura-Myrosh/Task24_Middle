@@ -1,0 +1,16 @@
+﻿@using Library.Models
+@model  IEnumerable<Feedback>
+@{
+    ViewBag.Title = "Guest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Feedbacks</h2>
+<ul class="list-group list-group-flush active">
+    @foreach (var item in Model)
+    {
+        <lable class="lable label-info">@item.AuthorName @item.DateOfFeedback</lable>
+        <li class="list-group-item">@item.Text</li>
+    }
+</ul>
+@Html.ActionLink("Create Feedback", "ShowCreateFeedbackForm", new { @class = "btn btn-default" })
